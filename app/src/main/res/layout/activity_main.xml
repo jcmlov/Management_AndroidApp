@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/welcomeMessage"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="24dp"
+        android:text="TextView"
+        android:textAppearance="@android:style/TextAppearance.Material.Display1" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/welcomeMessage"
+        android:layout_below="@+id/welcomeMessage"
+        android:text="아이디"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+    <TextView
+        android:id="@+id/idText"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/welcomeMessage"
+        android:layout_below="@+id/textView2"
+        android:text="TextView"
+        android:textAppearance="@android:style/TextAppearance.Material.Display1" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/welcomeMessage"
+        android:layout_below="@+id/idText"
+        android:text="비밀번호"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
+
+    <TextView
+        android:id="@+id/passwordText"
+        android:layout_width="345dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/welcomeMessage"
+        android:layout_below="@+id/textView4"
+        android:text="TextView"
+        android:textAppearance="@android:style/TextAppearance.Material.Display1" />
+</RelativeLayout>
