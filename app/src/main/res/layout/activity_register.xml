@@ -26,7 +26,7 @@
         android:layout_below="@+id/idText"
         android:ems="10"
         android:hint="비밀번호"
-        android:inputType="textPersonName" />
+        android:inputType="textPassword" />
 
     <EditText
         android:id="@+id/nameText"
@@ -48,12 +48,23 @@
         android:hint="나이"
         android:inputType="textPersonName" />
 
+    <EditText
+        android:id="@+id/emailText"
+        android:layout_width="357dp"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/idText"
+        android:layout_below="@+id/ageText"
+        android:ems="10"
+        android:hint="이메일"
+        android:inputType="textPersonName" />
+
     <Button
         android:id="@+id/registerButton"
         android:layout_width="357dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/idText"
-        android:layout_marginTop="215dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="182dp"
         android:text="회원가입" />
+
 </RelativeLayout>
