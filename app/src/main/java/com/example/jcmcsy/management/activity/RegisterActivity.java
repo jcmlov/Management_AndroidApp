@@ -1,7 +1,5 @@
-package com.example.jcmcsy.management;
+package com.example.jcmcsy.management.activity;
 
-import android.content.Intent;
-import android.net.Uri;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -12,6 +10,7 @@ import android.widget.EditText;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.jcmcsy.management.R;
 import com.example.jcmcsy.management.request.RegisterRequest;
 
 import org.json.JSONException;

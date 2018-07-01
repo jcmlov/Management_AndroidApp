@@ -1,4 +1,4 @@
-package com.example.jcmcsy.management;
+package com.example.jcmcsy.management.activity;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.example.jcmcsy.management.R;
 import com.example.jcmcsy.management.adapters.UserListAdapter;
 import com.example.jcmcsy.management.vo.User;
 
