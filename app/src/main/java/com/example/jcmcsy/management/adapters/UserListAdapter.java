@@ -24,11 +24,13 @@ public class UserListAdapter extends BaseAdapter {
 
     private Context context;
     private List<User> userList;
+    private List<User> saveList;
     private Activity parentActivity;
 
-    public UserListAdapter(Context context, List<User> userList, Activity parentActivity) {
+    public UserListAdapter(Context context, List<User> userList, List<User> saveList, Activity parentActivity) {
         this.context = context;
         this.userList = userList;
+        this.saveList = saveList;
         this.parentActivity = parentActivity;
     }
 
@@ -76,6 +78,12 @@ public class UserListAdapter extends BaseAdapter {
 
                             if(success) {
                                 userList.remove(i);
+                                for(int i=0; i<saveList.size(); i++) {
+                                    if(saveList.get(i).getUserId().equals(userId.getText().toString())) {
+                                        saveList.remove(i);
+                                        break;
+                                    }
+                                }
                                 notifyDataSetChanged();
                             }
                         } catch (Exception e) {

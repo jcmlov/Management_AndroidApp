@@ -20,7 +20,7 @@ public class DeleteRequest extends StringRequest {
     }
 
     @Override
-    protected Map<String, String> getParams() throws AuthFailureError {
-        return super.getParams();
+    public Map<String, String> getParams() {
+        return parameters;
     }
 }

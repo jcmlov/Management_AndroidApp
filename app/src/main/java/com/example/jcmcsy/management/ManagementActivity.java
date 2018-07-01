@@ -3,6 +3,9 @@ package com.example.jcmcsy.management;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -21,6 +24,7 @@ public class ManagementActivity extends AppCompatActivity {
     private ListView listView;
     private UserListAdapter adapter;
     private List<User> userList;
+    private List<User> saveList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +34,8 @@ public class ManagementActivity extends AppCompatActivity {
 
         listView = (ListView) findViewById(R.id.listView);
         userList = new ArrayList<User>();
-        adapter = new UserListAdapter(getApplicationContext(), userList, this);
+        saveList = new ArrayList<User>();
+        adapter = new UserListAdapter(getApplicationContext(), userList, saveList, this);
         listView.setAdapter(adapter);
 
         try {
@@ -50,6 +55,7 @@ public class ManagementActivity extends AppCompatActivity {
 
                 if(!userId.equals("admin")) {
                     userList.add(user);
+                    saveList.add(user);
                 }
                 count++;
             }
@@ -58,5 +64,32 @@ public class ManagementActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+        EditText search = (EditText) findViewById(R.id.search);
+        search.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                searchUser(charSequence.toString());
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+
+            }
+        });
+    }
+
+    public void searchUser(String search) {
+        userList.clear();
+        for(int i=0; i<saveList.size(); i++) {
+            if(saveList.get(i).getUserId().contains(search)) {
+                userList.add(saveList.get(i));
+            }
+        }
+        adapter.notifyDataSetChanged();
     }
 }
